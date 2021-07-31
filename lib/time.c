@@ -2,7 +2,9 @@
 
 unsigned long _get_count()
 {
-    unsigned long _contval;
+    static unsigned long _contval;
+    _contval ++;
+    /*
     asm volatile(
         "lui $25, 0xbfb0\n\t"
         "lw %0,-0x2000($25)\n\t"
@@ -10,6 +12,7 @@ unsigned long _get_count()
         :
         :"$25"
         );
+        */
     return  _contval;
 }
 
@@ -20,11 +23,14 @@ unsigned long get_count()
 
 unsigned long get_count_my()
 {
-    unsigned long n;
+    static unsigned long n;
+    n ++;
+    /*
     asm volatile(
         "mfc0 %0, $9\n\t"
         :"=r"(n)
         );
+        */
     return  n;
 }
 
