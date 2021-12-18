@@ -219,7 +219,29 @@ run_test:
 	nop
     bal shell10
     nop
+    b go_finish
+    nop
 11:
+	bal	shell1
+	nop
+	bal	shell2
+	nop
+	bal	shell3
+	nop
+	bal	shell4
+	nop
+	bal	shell5
+	nop
+	bal	shell6
+	nop
+	bal	shell7
+	nop
+	bal	shell8
+	nop
+	bal	shell9
+	nop
+	bal	shell10
+	nop
     b go_finish
     nop
 #endif
